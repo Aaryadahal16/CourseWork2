@@ -29,6 +29,17 @@ def additem():
     e_5 = entry5.get()
     e_6 = entry6.get()
 
+    # for first time:
+    # try reading file, if file exists, do nothing
+    # else, add header for the first time
+    try:
+        with open("CW2.csv", 'r') as f:
+            f.close()
+    except:
+        with open("CW2.csv", 'w') as f1:
+            f1.write('MedicineName,MedicinePrice,Quantity,Category,Description,Discount\n')
+        f1.close()
+
     if entry1.get() == "" and entry2.get() == "" and entry3.get() == "" and entry4.get() == "" and entry5.get() == "" and entry6.get() == "":
 
         print("Error")
@@ -41,6 +52,7 @@ def additem():
         entry2.delete(0, END)
         entry3.delete(0, END)
         entry4.delete(0, END)
+
         entry5.delete(0, END)
         entry6.delete(0, END)
         # use of error handling try and except block
