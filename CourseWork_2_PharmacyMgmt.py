@@ -89,17 +89,26 @@ def deleteitem():
     else:
         result = tkMessageBox.askquestion("Submit",
                                           "You are about to delete following details\n" + e1 + "\n" + e2 + "\n" + e3 + "\n" + e4 + "\n" + e5 + "\n" + e6)
-
-        if (result == "yes"):
-            print("here")
-            with open("CW2.csv", 'r') as f, open("pharmacy1.csv", "w") as w1: # file handling2
-                for line in f:
-                    if e1 not in line:
-                        w1.write(line)
-            os.remove("CW2.csv")
-            os.rename("pharmacy1.csv", "CW2.csv")
-            f.close()
-            w1.close()
+        try:
+            if (result == "yes"):
+                print("here")
+                with open("CW2.csv", 'r') as f, open("pharmacy1.csv", "w") as w1: # file handling2
+                    for line in f:
+                        if e1 not in line:
+                            w1.write(line)
+                os.remove("CW2.csv")
+                os.rename("pharmacy1.csv", "CW2.csv")
+                f.close()
+                w1.close()
+            else:
+                entry1.set("")
+                entry2.set("")
+                entry3.set("")
+                entry4.set("")
+                entry5.set("")
+                entry6.set("")
+        except:
+            tkMessageBox.showinfo("Info","No information was deleted.")
 
             entry1.delete(0, END)
             entry2.delete(0, END)

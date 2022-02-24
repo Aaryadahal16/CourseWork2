@@ -1,3 +1,7 @@
 MedicineName,MedicinePrice,Quantity,Category,Description,Discount
-a, b, c, d,e,f
-p, q, r, s,t,u
+paracetamol, 100, 300, antipyretics ,relief from fever,0
+flexon, 250, 200, Analgesics,pain meds,0
+brufin , 80, 100, analgesics,description from pain and fever,10
+penicilin , 90, 10, antibiotics,reduces bacterial growth,0
+Pentop, 95, 80, antacids,gastritis,0
+detol, 50, 100, antiseptic,lifeboy,0
